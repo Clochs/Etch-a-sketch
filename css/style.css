@@ -1,0 +1,15 @@
+.squares {
+    background-color: red;
+    display: flex;
+    flex-grow: 1;
+    flex-basis: calc(100% / 16);
+    max-width: calc(100% / 16);
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 300px;
+    width: 300px;
+    border: 1px solid black;
+}
