@@ -1,15 +1,23 @@
-.squares {
-    background-color: red;
-    display: flex;
-    flex-grow: 1;
-    flex-basis: var(--squareSize);
-    max-width: calc(100% / 16);
-}
-
 #container {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     height: 300px;
     width: 300px;
+}
+
+.squares {
+    background: #adff2f;
     border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.squares.black {
+    background: black;
+}
+
+button {
+    font-weight: 500;
+    width: 75px;
+    height: 75px;
 }

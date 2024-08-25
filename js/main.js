@@ -1,23 +1,31 @@
-let inputBtn = document.querySelector('#input-btn')
-let buildBtn = document.querySelector('#build-btnk')
+let inputBtn = document.querySelector('#inputBtn')
+let buildBtn = document.querySelector('#buildBtn')
 let container = document.querySelector('#container')
 let userChoice
-let containerSize = 300
-let squareSize = containerSize / userChoice 
 
-// IF inputBtn is clicked
-//      prompt the user for the grid size
-// IF grid size is less than 0 or greater than 100
-//      prompt the user again
-// INIT a variable with the user input
 inputBtn.addEventListener('click', () => {
-    userChoice = Number(prompt("Enter a number between 1 and 100: "))
-    while (userChoice < 1 || userChoice > 100) {
-        userChoice = Number(prompt("Try again: "))
-    }
+    userChoice = Number(prompt('Enter the number of squares per row/column:'))
+    console.log(userChoice)
+    console.log(typeof (userChoice))
 })
 
 buildBtn.addEventListener('click', () => {
-    
-})
+    // Clear any existing squares
+    container.innerHTML = ''
 
+    let squareSize = container.clientWidth / userChoice;
+
+    for (let i = 0; i < userChoice * userChoice; i++) {
+        let squares = document.createElement('div')
+        squares.classList.add('squares')
+        squares.style.width = `${squareSize}px`
+        squares.style.height = `${squareSize}px`
+
+        squares.addEventListener('mouseover', () => {
+            squares.classList.add('black')
+            console.log("Hovered")
+        })
+
+        container.appendChild(squares)
+    }
+})
