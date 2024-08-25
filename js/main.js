@@ -1,90 +1,31 @@
-let button = document.querySelector('#btn')
-let container = document.querySelector('#container')
 let inputBtn = document.querySelector('#inputBtn')
+let buildBtn = document.querySelector('#buildBtn')
+let container = document.querySelector('#container')
 let userChoice
 
-
 inputBtn.addEventListener('click', () => {
-    userChoice = Number(prompt('Enter a value: '))
+    userChoice = Number(prompt('Enter the number of squares per row/column:'))
     console.log(userChoice)
     console.log(typeof (userChoice))
 })
-button.addEventListener('click', () => {
-    for (let i = 0; i < userChoice; i++) {
-        let row = document.createElement('div')
-        row.classList.add('row')
 
-        for (let j = 0; j < userChoice; j++) {
-            let squares = document.createElement('div')
-            squares.classList.add('squares')
+buildBtn.addEventListener('click', () => {
+    // Clear any existing squares
+    container.innerHTML = ''
 
+    let squareSize = container.clientWidth / userChoice;
 
-            squares.addEventListener('mouseover', () => {
-                squares.classList.add('black')
-                console.log("Hovered")
-            })
-            row.appendChild(squares)
-        }
-        container.appendChild(row)
+    for (let i = 0; i < userChoice * userChoice; i++) {
+        let squares = document.createElement('div')
+        squares.classList.add('squares')
+        squares.style.width = `${squareSize}px`
+        squares.style.height = `${squareSize}px`
+
+        squares.addEventListener('mouseover', () => {
+            squares.classList.add('black')
+            console.log("Hovered")
+        })
+
+        container.appendChild(squares)
     }
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let button = document.querySelector('#btn')
-// let main = document.querySelector('#main')
-
-
-// button.addEventListener('click', () => {
-//     for (let i = 0; i < 16; i++){
-//         let row = document.createElement('div')
-//         row.classList.add('row')
-
-//         for (let j = 0; j < 16; j++){
-//             let squares = document.createElement('div')
-//             squares.classList.add('squares')
-
-//             squares.addEventListener('mouseover', () => {
-//                 console.log('hovered')
-//                 squares.classList.add('black')
-//             })
-//             row.appendChild(squares)
-//         }
-//         main.appendChild(row)
-//         }
-//     })
-
-
-

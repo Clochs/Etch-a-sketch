@@ -1,16 +1,15 @@
-.squares {
-    background: #adff2f;
-    height: 25px;
-    width: 25px;
-    color: red;
-    border: 1px solid black;
-}
-
 #container {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    height: 300px;
+    width: 300px;
+}
 
+.squares {
+    background: #adff2f;
+    border: 1px solid black;
+    box-sizing: border-box;
 }
 
 .squares.black {
