@@ -5,8 +5,9 @@ let userChoice
 
 inputBtn.addEventListener('click', () => {
     userChoice = Number(prompt('Enter the number of squares per row/column:'))
-    console.log(userChoice)
-    console.log(typeof (userChoice))
+    while (userChoice < 1 || userChoice > 100) {
+        userChoice = Number(prompt('Enter a number between 1 and 100: '))
+    }
 })
 
 buildBtn.addEventListener('click', () => {
