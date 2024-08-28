@@ -58,5 +58,8 @@
 let inputBtn = document.querySelector('#inputBtn')
 let buildBtn = document.querySelector('#buildBtn')
 let container = document.querySelector('#container')
+let squareSize = container.clientWidth / userChoice
 let userChoice
+
+
 
