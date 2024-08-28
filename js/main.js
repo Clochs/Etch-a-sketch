@@ -1,34 +1,34 @@
-// let inputBtn = document.querySelector('#inputBtn')
-// let buildBtn = document.querySelector('#buildBtn')
-// let container = document.querySelector('#container')
-// let userChoice
+let inputBtn = document.querySelector('#inputBtn')
+let buildBtn = document.querySelector('#buildBtn')
+let container = document.querySelector('#container')
+let userChoice
 
-// inputBtn.addEventListener('click', () => {
-//     userChoice = Number(prompt('Enter the number of squares per row/column:'))
-//     while (userChoice < 1 || userChoice > 100) {
-//         userChoice = Number(prompt('Enter a number between 1 and 100: '))
-//     }
-// })
+inputBtn.addEventListener('click', () => {
+    userChoice = Number(prompt('Enter the number of squares per row/column:'))
+    while (userChoice < 1 || userChoice > 100) {
+        userChoice = Number(prompt('Enter a number between 1 and 100: '))
+    }
+})
 
-// buildBtn.addEventListener('click', () => {
-//     // Clear any existing squares
-//     container.innerHTML = ''
+buildBtn.addEventListener('click', () => {
+    // Clear any existing squares
+    container.innerHTML = ''
 
-//     let squareSize = container.clientWidth / userChoice;
+    let squareSize = container.clientWidth / userChoice;
 
-//     for (let i = 0; i < userChoice * userChoice; i++) {
-//         let squares = document.createElement('div')
-//         squares.classList.add('squares')
-//         squares.style.width = `${squareSize}px`
-//         squares.style.height = `${squareSize}px`
+    for (let i = 0; i < userChoice * userChoice; i++) {
+        let squares = document.createElement('div')
+        squares.classList.add('squares')
+        squares.style.width = `${squareSize}px`
+        squares.style.height = `${squareSize}px`
 
-//         squares.addEventListener('mouseover', () => {
-//             squares.classList.add('black')
-//         })
+        squares.addEventListener('mouseover', () => {
+            squares.classList.add('black')
+        })
 
-//         container.appendChild(squares)
-//     }
-// })
+        container.appendChild(squares)
+    }
+})
 
 
 
@@ -53,13 +53,4 @@
 // 4. INIT squareSize clientWidth / userChoice
 // 5. build the square using js style
 // 6. INIT hover effect to turn squares black
-
-
-let inputBtn = document.querySelector('#inputBtn')
-let buildBtn = document.querySelector('#buildBtn')
-let container = document.querySelector('#container')
-let squareSize = container.clientWidth / userChoice
-let userChoice
-
-
 
